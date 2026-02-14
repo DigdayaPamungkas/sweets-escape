@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 320 60% 96%;
+    --foreground: 280 40% 15%;
+
+    --card: 320 50% 97%;
+    --card-foreground: 280 40% 15%;
+
+    --popover: 320 50% 97%;
+    --popover-foreground: 280 40% 15%;
+
+    --primary: 330 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 50% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 320 30% 90%;
+    --muted-foreground: 280 20% 45%;
+
+    --accent: 300 60% 75%;
+    --accent-foreground: 280 40% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 320 30% 85%;
+    --input: 320 30% 85%;
+    --ring: 330 70% 60%;
+
+    --radius: 0.75rem;
+
+    --valentine-pink: 330 70% 60%;
+    --valentine-purple: 280 50% 55%;
+    --valentine-light-pink: 330 80% 90%;
+    --valentine-deep: 300 60% 40%;
+    --valentine-glow: 330 100% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+/* Floating hearts animation */
+@keyframes float-heart {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) rotate(20deg) scale(1);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(330 70% 60% / 0.4), 0 0 40px hsl(280 50% 55% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(330 70% 60% / 0.6), 0 0 60px hsl(280 50% 55% / 0.3);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes envelope-open {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(180deg); }
+}
+
+@keyframes letter-rise {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120px); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
